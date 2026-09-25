@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0c1118" />
+    <script>
+      try {
+        const theme = localStorage.getItem('finishlab.appearance.v1');
+        const colors = { studio: '#04060c', crimson: '#060203', ocean: '#01070c', sunset: '#080308', graphite: '#050506', daylight: '#e9edf5' };
+        const chosen = theme in colors ? theme : 'studio';
+        document.documentElement.dataset.theme = chosen;
+        const glass = localStorage.getItem('finishlab.glass.v1');
+        document.documentElement.dataset.glass = glass === 'off' || glass === 'on' ? glass : matchMedia('(prefers-reduced-transparency: reduce)').matches ? 'off' : 'on';
+        const motion = localStorage.getItem('finishlab.motion.v1');
+        document.documentElement.dataset.motion = motion === 'on' || motion === 'off' ? motion : 'system';
+        document.querySelector('meta[name="theme-color"]').content = colors[chosen];
+        const ambience = localStorage.getItem('finishlab.ambience.v1');
+        document.documentElement.dataset.ambience = ['aurora', 'shafts', 'still'].includes(ambience) ? ambience : 'aurora';
+      } catch { document.documentElement.dataset.theme = 'studio'; }
+    </script>
+    <title>FinishLab — Position Map</title>
+    <meta
+      name="description"
+      content="A private no-gi BJJ position map: every position on the positional hierarchy, the sourced moves between them, route finding, your game plan, and one question to take to training."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-CY2ksSE9.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/schema-DMYOF3md.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CSeGULEY.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
