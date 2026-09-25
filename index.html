@@ -13,8 +13,8 @@
         document.documentElement.dataset.theme = chosen;
         const glass = localStorage.getItem('finishlab.glass.v1');
         document.documentElement.dataset.glass = glass === 'off' || glass === 'on' ? glass : matchMedia('(prefers-reduced-transparency: reduce)').matches ? 'off' : 'on';
-        const motion = localStorage.getItem('finishlab.motion.v1');
-        document.documentElement.dataset.motion = motion === 'on' || motion === 'off' ? motion : 'system';
+        const motion = localStorage.getItem('finishlab.motion.v2') || (localStorage.getItem('finishlab.motion.v1') === 'off' ? 'off' : 'on');
+        document.documentElement.dataset.motion = ['on', 'off', 'system'].includes(motion) ? motion : 'on';
         document.querySelector('meta[name="theme-color"]').content = colors[chosen];
         const ambience = localStorage.getItem('finishlab.ambience.v1');
         document.documentElement.dataset.ambience = ['aurora', 'shafts', 'still'].includes(ambience) ? ambience : 'aurora';
@@ -31,9 +31,9 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-CY2ksSE9.js"></script>
+    <script type="module" crossorigin src="./assets/index-DFAC3qhr.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/schema-DMYOF3md.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-CSeGULEY.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DvVMqSuH.css">
   </head>
   <body>
     <div id="root"></div>
